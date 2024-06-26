@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Sources">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="GameMain.cpp">
+      <Filter>Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="Math.cpp">
+      <Filter>Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="MapTile.cpp">
+      <Filter>Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="Game.cpp">
+      <Filter>Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="Apple.cpp">
+      <Filter>Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="SnakeTile.cpp">
+      <Filter>Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="UI.cpp">
+      <Filter>Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="UIMenu.cpp">
+      <Filter>Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="UIMenuDifficultyLevel.cpp">
+      <Filter>Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="UIMenuTableRecords.cpp">
+      <Filter>Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="UIMenuTRAddNamePlayer.cpp">
+      <Filter>Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="UIMenuSettings.cpp">
+      <Filter>Sources</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Game.h">
+      <Filter>Sources</Filter>
+    </ClInclude>
+    <ClInclude Include="Constants.h">
+      <Filter>Sources</Filter>
+    </ClInclude>
+    <ClInclude Include="Math.h">
+      <Filter>Sources</Filter>
+    </ClInclude>
+    <ClInclude Include="MapTile.h">
+      <Filter>Sources</Filter>
+    </ClInclude>
+    <ClInclude Include="Apple.h">
+      <Filter>Sources</Filter>
+    </ClInclude>
+    <ClInclude Include="SnakeTile.h">
+      <Filter>Sources</Filter>
+    </ClInclude>
+    <ClInclude Include="UI.h">
+      <Filter>Sources</Filter>
+    </ClInclude>
+    <ClInclude Include="UIMenu.h">
+      <Filter>Sources</Filter>
+    </ClInclude>
+    <ClInclude Include="UIMenuDifficultyLevel.h">
+      <Filter>Sources</Filter>
+    </ClInclude>
+    <ClInclude Include="UIMenuTableRecords.h">
+      <Filter>Sources</Filter>
+    </ClInclude>
+    <ClInclude Include="UIMenuTRAddNamePlayer.h">
+      <Filter>Sources</Filter>
+    </ClInclude>
+    <ClInclude Include="UIMenuSettings.h">
+      <Filter>Sources</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
