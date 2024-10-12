@@ -103,74 +103,81 @@ namespace Snake
 	void CheckTailDirection(Game& game)
 	{
 		const int SECOND_FINITE_ELEMENT = game.snakeAll.size() - 2;
+
+		game.snakeAll.back().sprite.setTexture(game.snakeTailTexture);
 		// ¬право
 		if (game.snakeAll[SECOND_FINITE_ELEMENT].position2D.x > game.snakeAll.back().position2D.x)
 		{
-			game.snakeAll[SECOND_FINITE_ELEMENT].typeTileSnake = TypeTileSnake::SnakeTailDirectionLeftRight;
-			game.snakeAll[SECOND_FINITE_ELEMENT].sprite.setTexture(game.snakeTailTexture);
-			game.snakeAll[SECOND_FINITE_ELEMENT].sprite.setRotation(270.f);
+			game.snakeAll.back().typeTileSnake = TypeTileSnake::SnakeTailDirectionLeftRight;
+			game.snakeAll.back().sprite.setRotation(270.f);
 		}
 		// ¬лево
 		else if (game.snakeAll[SECOND_FINITE_ELEMENT].position2D.x < game.snakeAll.back().position2D.x)
 		{
-			game.snakeAll[SECOND_FINITE_ELEMENT].typeTileSnake = TypeTileSnake::SnakeTailDirectionLeftRight;
-			game.snakeAll[SECOND_FINITE_ELEMENT].sprite.setTexture(game.snakeTailTexture);
-			game.snakeAll[SECOND_FINITE_ELEMENT].sprite.setRotation(90.f);
+			game.snakeAll.back().typeTileSnake = TypeTileSnake::SnakeTailDirectionLeftRight;
+			game.snakeAll.back().sprite.setRotation(90.f);
 		}
 		// ¬низ
 		else if (game.snakeAll[SECOND_FINITE_ELEMENT].position2D.y > game.snakeAll.back().position2D.y)
 		{
-			game.snakeAll[SECOND_FINITE_ELEMENT].typeTileSnake = TypeTileSnake::SnakeTailDirectionUpDown;
-			game.snakeAll[SECOND_FINITE_ELEMENT].sprite.setTexture(game.snakeTailTexture);
-			game.snakeAll[SECOND_FINITE_ELEMENT].sprite.setRotation(0.f);
+			game.snakeAll.back().typeTileSnake = TypeTileSnake::SnakeTailDirectionUpDown;
+			game.snakeAll.back().sprite.setRotation(0.f);
 		}
 		// ¬верх
 		else if (game.snakeAll[SECOND_FINITE_ELEMENT].position2D.y < game.snakeAll.back().position2D.y)
 		{
-			game.snakeAll[SECOND_FINITE_ELEMENT].typeTileSnake = TypeTileSnake::SnakeTailDirectionUpDown;
-			game.snakeAll[SECOND_FINITE_ELEMENT].sprite.setTexture(game.snakeTailTexture);
-			game.snakeAll[SECOND_FINITE_ELEMENT].sprite.setRotation(180.f);
+			game.snakeAll.back().typeTileSnake = TypeTileSnake::SnakeTailDirectionUpDown;
+			game.snakeAll.back().sprite.setRotation(180.f);
 		}
 	}
 
 	void UpdateSnakeTiles(Game& game)
 	{
 		game.snakeAll.emplace(++game.snakeAll.cbegin(), game.snakeAll[0]);
-
+		game.snakeAll.pop_back();
+		
 		switch (game.snakeAll[0].typeTileSnake)
 		{
 			case TypeTileSnake::SnakeHeadDirectionLeft:
 			{
 				game.snakeAll[0].position2D.x -= SNAKE_SIZE;
 				CheckWhichTileShouldBetween(game);
+				game.isPushButtonWASD = false;
 				break;
 			}
 			case TypeTileSnake::SnakeHeadDirectionUp:
 			{
 				game.snakeAll[0].position2D.y -= SNAKE_SIZE;
 				CheckWhichTileShouldBetween(game);
+				game.isPushButtonWASD = false;
 				break;
 			}
 			case TypeTileSnake::SnakeHeadDirectionRight:
 			{
 				game.snakeAll[0].position2D.x += SNAKE_SIZE;
 				CheckWhichTileShouldBetween(game);
+				game.isPushButtonWASD = false;
 				break;
 			}
 			case TypeTileSnake::SnakeHeadDirectionDown:
 			{
 				game.snakeAll[0].position2D.y += SNAKE_SIZE;
 				CheckWhichTileShouldBetween(game);
+				game.isPushButtonWASD = false;
 				break;
 			}
 		}
+
+		for(SnakeTile & snakeTile : game.snakeAll)
+		{
+			snakeTile.sprite.setPosition(snakeTile.position2D.x, snakeTile.position2D.y);
+		}
+
 		CheckTailDirection(game);
-		game.snakeAll.pop_back();
 	}
 
 	void DrawSnakeTile(SnakeTile& snakeTile, sf::RenderWindow& window)
 	{
-		snakeTile.sprite.setPosition(snakeTile.position2D.x, snakeTile.position2D.y);
 		window.draw(snakeTile.sprite);
 	}
 }

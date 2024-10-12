@@ -19,6 +19,7 @@ namespace Snake
 
 		int numEatenApples = 0;
 		bool isGameFinished = false;
+		bool isPushButtonWASD = false;
 		float gameFinishTime = 0.0f;
 		std::string namePlayer = "XYZ";
 

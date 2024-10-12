@@ -65,7 +65,7 @@ namespace Snake
 			}
 
 			PlayInputEnterMenuSound(game);
-			sf::sleep(sf::seconds(0.1f));
+			sf::sleep(sf::seconds(STEP_TIME_ACTIVATE_BUTTON));
 		}
 	}
 
@@ -135,7 +135,7 @@ namespace Snake
 			CheckColorUIMenuDifficultyLevelAllItem(uiMenuDifficultyLevel);
 
 			PlayInputMoveMenuSound(game);
-			sf::sleep(sf::seconds(0.1f));
+			sf::sleep(sf::seconds(STEP_TIME_ACTIVATE_BUTTON));
 		}
 		else if ((sf::Keyboard::isKeyPressed(sf::Keyboard::W)) &&
 			(uiMenuDifficultyLevel.selectedDifficultyLevel != UIMenuDifficultyLevelEnum::IsLevel1))
@@ -145,7 +145,7 @@ namespace Snake
 			CheckColorUIMenuDifficultyLevelAllItem(uiMenuDifficultyLevel);
 
 			PlayInputMoveMenuSound(game);
-			sf::sleep(sf::seconds(0.1f));
+			sf::sleep(sf::seconds(STEP_TIME_ACTIVATE_BUTTON));
 		}
 
 		CheckEnterPressedUIMenuDifficultyLevel(uiMenuDifficultyLevel, game);

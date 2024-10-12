@@ -106,7 +106,7 @@ namespace Snake
 			}
 
 			PlayInputEnterMenuSound(game);
-			sf::sleep(sf::seconds(0.1f));
+			sf::sleep(sf::seconds(STEP_TIME_ACTIVATE_BUTTON));
 		}
 	}
 
@@ -169,7 +169,7 @@ namespace Snake
 			CheckColorUIMenuSettingsAllItem(uiMenuSettings);
 
 			PlayInputMoveMenuSound(game);
-			sf::sleep(sf::seconds(0.1f));
+			sf::sleep(sf::seconds(STEP_TIME_ACTIVATE_BUTTON));
 		}
 		else if ((sf::Keyboard::isKeyPressed(sf::Keyboard::W)) &&
 				(uiMenuSettings.selectedMenuSettingsItem != UIMenuSettingsEnum::IsSoundEffects))
@@ -179,7 +179,7 @@ namespace Snake
 			CheckColorUIMenuSettingsAllItem(uiMenuSettings);
 
 			PlayInputMoveMenuSound(game);
-			sf::sleep(sf::seconds(0.1f));
+			sf::sleep(sf::seconds(STEP_TIME_ACTIVATE_BUTTON));
 		}
 
 		CheckEnterPressedUIMenuTablePlayerResultItem(uiMenuSettings, game);

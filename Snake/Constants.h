@@ -23,7 +23,7 @@ namespace Snake
 	const float SNAKE_SIZE = 20.f;
 	const float MIN_RESP_DISTANCE = 40.f;
 
-	const float STEP_TIME = 0.1f;
+	const float STEP_TIME_ACTIVATE_BUTTON = 0.25f;
 
 	const int BORDER_LEFT_RIGHT = 100;
 	const int BORDER_UP_DOWN = 100;

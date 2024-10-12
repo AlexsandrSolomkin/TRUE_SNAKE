@@ -94,7 +94,7 @@ namespace Snake
 			SerializeGame(game);
 			game.namePlayer = "XYZ";
 			PlayInputEnterMenuSound(game);
-			sf::sleep(sf::seconds(0.2f));
+			sf::sleep(sf::seconds(STEP_TIME_ACTIVATE_BUTTON));
 		}
 	}
 
@@ -114,7 +114,7 @@ namespace Snake
 			}
 
 			PlayInputEnterMenuSound(game);
-			sf::sleep(sf::seconds(0.2f));
+			sf::sleep(sf::seconds(STEP_TIME_ACTIVATE_BUTTON));
 		}
 	}
 
@@ -161,7 +161,7 @@ namespace Snake
 			CheckColorUIMenuTRAddNamePlayerAllItem(uiMenuTRAddNamePlayer);
 
 			PlayInputMoveMenuSound(game);
-			sf::sleep(sf::seconds(0.1f));
+			sf::sleep(sf::seconds(STEP_TIME_ACTIVATE_BUTTON));
 		}
 		else if ((sf::Keyboard::isKeyPressed(sf::Keyboard::W)) &&
 			(uiMenuTRAddNamePlayer.selectedMenuTRAddNamePlayerItem != UIMenuTRAddNamePlayerEnum::IsAddDefaultName))
@@ -171,7 +171,7 @@ namespace Snake
 			CheckColorUIMenuTRAddNamePlayerAllItem(uiMenuTRAddNamePlayer);
 
 			PlayInputMoveMenuSound(game);
-			sf::sleep(sf::seconds(0.1f));
+			sf::sleep(sf::seconds(STEP_TIME_ACTIVATE_BUTTON));
 		}
 
 		CheckEnterPressedUIMenuTRAddNamePlayerItem(uiMenuTRAddNamePlayer, game);
